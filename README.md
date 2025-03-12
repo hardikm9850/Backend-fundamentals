@@ -1,4 +1,4 @@
-# Backend & Cloud Development Roadmap 🚀
+# Backend & Cloud Development Roadmap 
 
 ## Overview
 This is a roadmap I put together to guide my journey in **Backend Engineering** and **Cloud Development**. 
@@ -9,10 +9,11 @@ This is a roadmap I put together to guide my journey in **Backend Engineering** 
 *(Goal: Build reliable, scalable backend systems using Golang & microservices)*
 
 ### 🟢 Phase 1: Fundamentals
-- [ ] Get comfortable with Go (syntax, data structures, error handling)
-- [ ] Learn how HTTP, REST, and WebSockets work
+- [x] Get comfortable with Go (syntax, data structures, error handling)
+- [x] Learn how HTTP, REST, and WebSockets work
+- [ ] Watch Fundamentals of Backend Engineering - Hussein Nasser for core concepts
 - [ ] Work with databases: SQL (PostgreSQL/MySQL) & NoSQL (MongoDB, Redis)
-- [ ] Build simple CRUD APIs using Go (Gin/Fiber)
+- [x] Build simple CRUD APIs using Go (Gin/Fiber)
 - [ ] Implement authentication (JWT, OAuth)
 
 ### 🟡 Phase 2: Scalable Backend Design
