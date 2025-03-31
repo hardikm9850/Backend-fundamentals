@@ -22,3 +22,44 @@
 - Google responds to the **router's public IP**.  
 - The router **knows the request came from `192.168.1.100`** and sends the response back to the MacBook.  
 
+
+## Network Flow for Accessing google.com
+
+1. **Initiating the Request:**
+   - The MacBook wants to visit `google.com`.
+   - The browser sends a request to `google.com`.
+
+2. **DNS Lookup (Domain Name System):**
+   - The MacBook checks its local DNS cache to see if it already has the IP address for `google.com`.
+   - If not, the MacBook sends a DNS query to its configured DNS server (often provided by the ISP or a public DNS like Google DNS or Cloudflare).
+
+3. **DNS Resolution:**
+   - The DNS server looks up the IP address of `google.com` in its records.
+   - If it does not have the IP in its cache, it will recursively query other DNS servers to resolve the IP.
+   - Once resolved, the DNS server sends the IP address of `google.com` (e.g., `142.250.72.78`) back to the MacBook.
+
+4. **Private IP to Public IP Conversion (NAT - Network Address Translation):**
+   - The MacBook has a private IP address assigned by the router (e.g., `192.168.1.10`).
+   - Before sending the request to Google, the router performs NAT.
+   - The router converts the MacBook's private IP address to its own public IP address (e.g., `203.0.113.5`), so the request can be routed across the internet.
+   - When an internal device sends a request to the internet (e.g., to visit a website), NAT changes the source IP of the packet from the device’s private IP to the router's public IP. It also records the port number associated with that device in the translation table.
+   - When the response comes back, NAT uses the port number to look up the correct internal device that initiated the request, and then forwards the data to the right device on the local network.
+
+5. **Routing the Request:**
+   - The router forwards the request to the destination server (Google’s web server) using the public IP address.
+   - The router ensures that the request can pass through the public internet infrastructure.
+
+6. **Google’s Server Response:**
+   - Google's web server receives the request on the public IP.
+   - Google’s server sends back the requested web content (HTML, images, etc.) to the router’s public IP.
+
+7. **Reverse NAT (Mapping Response to Private IP):**
+   - The router receives the response from Google.
+   - The router performs reverse NAT, converting the public IP back to the private IP of the MacBook (e.g., `192.168.1.10`).
+   
+8. **Delivering the Response to the MacBook:**
+   - The router forwards the response to the MacBook.
+   - The MacBook receives the content from Google and displays the website in the browser.
+
+
+The router uses a private IP address for local network communication, NAT, and security, ensuring that only the public-facing interface (with the public IP) communicates directly with the outside world. The internal interface with a private IP allows local devices to route their traffic through the router without the need for a unique public IP address for each device.
