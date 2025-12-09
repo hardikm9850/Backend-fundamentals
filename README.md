@@ -11,10 +11,10 @@ This is a roadmap I put together to guide my journey in **Backend Engineering** 
 ### 🟢 Phase 1: Fundamentals
 - [x] Get comfortable with Go (syntax, data structures, error handling)
 - [x] Learn how HTTP, REST, and WebSockets work
-- [ ] Work with databases: SQL (PostgreSQL/MySQL) & NoSQL (MongoDB, Redis)
+- [x] Work with databases: SQL (PostgreSQL/MySQL) & NoSQL (MongoDB, Redis)
 - [x] Build simple CRUD APIs using Go (Gin/Fiber)
-- [ ] Implement authentication (JWT, OAuth)
-- [ ] Watch **Fundamentals of Backend Engineering - Hussein Nasser** for core concepts
+- [x] Implement authentication (JWT, OAuth)
+- [x] Watch **Fundamentals of Backend Engineering - Hussein Nasser** for core concepts
 - [ ] **Goroutines** – Optimizing performance with concurrency in Go
 
 ### 🟡 Phase 2: Scalable Backend Design
